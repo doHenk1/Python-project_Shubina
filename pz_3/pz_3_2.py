@@ -2,17 +2,20 @@
 #последних точек (B или C) расположена ближе к A, и вывести эту точку и ее
 #расстояние от точки A.
 try:
-    a = float(input("Введите координату точки A:"))
-    b = float(input("Введите координату точки B:"))
-    c = float(input("Введите координату точки C:"))
-
-    dist_b = abs(b-a)
-    dist_c = abs(c-a)
-
-    if dist_b < dist_c:
-        print("Точка B ближе, расстояние =",dist_b)
-    else:
-        print("Точка C ближе, расстояние =",dist_c)
-
+    a = float(input("Введите координату точки A: "))
+    b = float(input("Введите координату точки B: "))
+    c = float(input("Введите координату точки C: "))
 except ValueError:
-    print("Ошибка!Введите числа")
+    print("Ошибка: введите числа")
+    exit()
+
+# Находим расстояния от A до B и от A до C (модуль разности)
+dist_b = abs(a - b)
+dist_c = abs(a - c)
+
+if dist_b < dist_c:
+    print(f"Точка B ближе к A. Расстояние: {dist_b}")
+elif dist_c < dist_b:
+    print(f"Точка C ближе к A. Расстояние: {dist_c}")
+else:
+    print(f"Точки B и C находятся на одинаковом расстоянии от A: {dist_b}")
