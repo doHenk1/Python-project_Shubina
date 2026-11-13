@@ -9,14 +9,12 @@ try:
 except ValueError:
     print("Ошибка: введите числа")
     exit()
-if a <= 0 or b <= 0 or c <= 0:
-    print("Ошибка: все числа должны быть положительными")
-else:
 
-    count_a = int(a // c)
-    count_b = int(b // c)
-    total = 0
-    for _ in range(count_a):
-        total += count_b
-
-    print(f"Количество квадратов: {total}")
+total = 0
+while a >= c:
+    a -= c
+    temp_b = b
+    while temp_b >= c:
+        temp_b -= c
+        total += 1
+print(f"Количество квадратов: {total}")
